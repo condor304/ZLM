@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.kubis.zerolamie"
+        version   = "1.0.5">
+    <name>Zero La Mie</name>
+
+    <description>
+		Este ilegal sa conduci dupa ce ai consumat alcool. Cu Zero La Mie afli in cat timp alcoolemia ta ajunge la Zero La Mie!
+    </description>
+
+    <author href="http://kubisinteractive.com" email="contact@desprealcool.ro">
+        SABMiller Romania
+    </author>
+
+    <feature name="http://api.phonegap.com/1.0/device" />
+
+    <preference name="phonegap-version" value="2.2.0" />
+    <preference name="orientation"      value="portrait" />
+    <preference name="target-device"    value="handset" />
+    <preference name="fullscreen"       value="false" />
+	<preference name="webviewbounce"	value="false" />
+	<preference name="stay-in-webview"	value="true" />
+	<preference name="ios-statusbarstyle" value="black-opaque" />
+	<preference name="show-splash-screen-spinner" value="false" />
+	<preference name="auto-hide-splash-screen" value="true" />
+	<preference name="prerendered-icon" value="true" />
+
+    <icon src="img/touch/apple-touch-icon.png" />
+	<icon src="img/touch/apple-touch-icon-57x57-precomposed.png" width="57" height="57" />
+	<icon src="img/touch/apple-touch-icon-72x72-precomposed.png" gap:platform="ios" width="72" height="72" />
+	<icon src="img/touch/apple-touch-icon-114x114-precomposed.png" width="114" height="114" />
+	<icon src="img/touch/apple-touch-icon-144x144-precomposed.png" width="144" height="144" />
+
+    <gap:splash src="img/startup/screen-iphone-portrait.png"    gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="img/startup/screen-iphone-portrait-x2.png"	gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="img/startup/screen-ipad-portrait.png"      gap:platform="ios"     width="768" height="1024" />
+    <gap:splash src="img/startup/screen-ipad-landscape.png"     gap:platform="ios"     width="1024" height="768" />
+</widget>

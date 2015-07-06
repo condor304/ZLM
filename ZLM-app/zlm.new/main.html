@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>ZeroLaMie</title>
+        <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, target-densitydpi=device-dpi">
+        <meta http-equiv="cleartype" content="on">
+		<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+
+		<script>
+			var site_url = 'http://desprealcool.ro/zlm/';
+		</script>
+		<!-- <script src="http://jsconsole.com/remote.js?A31A3024-2EB3-4A2D-BE90-19455B21D490"></script> -->
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+		<!-- 320x460 for iPhone 3GS -->
+		<link rel="apple-touch-startup-image" media="(max-device-width: 480px) and not (-webkit-min-device-pixel-ratio: 2)" href="img/startup/screen-iphone-portrait.png" />
+		<!-- 640x920 for retina display -->
+		<link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="img/startup/screen-iphone-portrait-x2.png" />
+		<!-- iPad Portrait 768x1004 -->
+		<link rel="apple-touch-startup-image" media="(min-device-width: 768px) and (orientation: portrait)" href="img/startup/screen-ipad-portrait.png" />
+		<!-- iPad Landscape 1024x748 -->
+		<link rel="apple-touch-startup-image" media="(min-device-width: 768px) and (orientation: landscape)" href="img/startup/screen-ipad-landscape.png" />
+
+		<script src="phonegap.js"></script>
+		<script src="js/stacktrace.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.mobile.min.js"></script>
+		<script src="js/helper.js"></script>
+		<script src="js/plugins.js?v=432423"></script>
+		<script>
+			$.mobile.ajaxEnabled=false;
+			$.mobile.loadingMessage = false;
+			$.mobile.buttonMarkup.hoverDelay = 0;
+		</script>
+
+        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+
+		<style>
+			body:after { content: url("img/icon.wine.selected.png") url("img/tabicon.3.0.png") url("img/tabicon.3.1.png") url("img/icon.spirits.list.png") url("img/history.wine.png") url("img/tabicon.2.female.0.png") url("img/tabicon.2.female.1.png") url("img/icon.bottle.small.png") url("img/tabicon.2.male.0.png") url("img/tabicon.2.male.1.png") url("img/button.add.png") url("img/tabicon.4.0.png") url("img/tabicon.4.1.png") url("img/history.spirits.png") url("img/icon.wine.png") url("img/bg_quickadd.png") url("img/icon.spirits.small.png") url("img/icon.spirits.png") url("img/bg.jpg") url("img/icon.wine.small.png") url("img/bg_input.png") url("img/icon.beer.small.png") url("img/top.png") url("img/bg_tabs.jpg") url("img/icon.beer.selected.png") url("img/bg_input_dark.png") url("img/add.png") url("img/button.red.png") url("img/female.0.png") url("img/female.1.png") url("img/icon.spirits.selected.png") url("img/history.beer.png") url("img/tabicon.1.0.png") url("img/tabicon.1.1.png") url("img/male.0.png") url("img/male.1.png") url("img/icon.wine.list.png") url("img/icon.beer.list.png") url("img/selected_bg.png") url("img/top_bg.png") url("img/timeframe.png") url("img/icon.beer.png"); display: none; }
+		</style>
+    </head>
+    <body>
+		<div id="container" data-role="page">
+			<img src="img/bg.jpg" class="bg">
+			<div class="step step1">
+				<div class="header">
+					<span>Choose your gender</span>
+				</div>
+
+				<div class="body">
+					<table>
+					<tr>
+						<td style="padding-left: 30px;">
+							<a href="javascript:;" id="male" class="genreicons">
+								<img src="img/male.0.png"><br>
+								<span>Male</span>
+							</a>
+						</td>
+						<td style="padding-right: 30px;">
+							<a href="javascript:;" id="female" class="genreicons">
+								<img src="img/female.0.png"><br>
+								<span>Female</span>
+							</a>
+						</td>
+					</tr>
+					</table>
+
+					<div class="input">
+						<table width="100%">
+						<tr>
+							<td class="label">Choose your weight</td>
+							<td class="text"><input data-prevent-focus-zoom="true" type="number" placeholder="0" id="weight" value="80"></td>
+							<td class="unit"><select data-role="none" id="weight_unit"><option value="kg">KG</option><option value="lb">LB</option></select></td>
+						</tr>
+						</table>
+					</div>
+
+					<div class="input">
+						<table>
+						<tr>
+							<td class="label">Choose your height</td>
+							<td class="text"><input data-prevent-focus-zoom="true" type="number" placeholder="0" id="height" value="170"></td>
+							<td class="unit"><select data-role="none" id="height_unit"><option value="cm">CM</option><option value="ft">FT</option></select></td>
+						</tr>
+						</table>
+					</div>
+				</div>
+				<a href="javascript:;" id="add_some_drinks" class="redbutton">Next step</a>
+			</div>
+
+			<div class="step step2">
+				<div class="list">
+					<a href="javascript:;" id="add_a_drink" class="addbutton"><img src="img/add.png" align="middle" /> <span>Add a drink</span></a>
+				</div>
+
+				<div class="text">
+					<span>Your profile is ready. You can change your data whenever you want.</span><br /><br />
+					<span>Start by adding a drink and create the combination you drank, to find out when your blood alcohol level will reach ZERO.</span><br /><br />
+					<!-- <span>Press the button above "Add a drink" and start the process.</span> -->
+				</div>
+			</div>
+
+			<div class="step step3">
+				<div class="topbg">
+					<table width="100%">
+					<tr class="labels">
+						<td class="drink beer bere">Beer</td>
+						<td class="drink wine vin">Wine</td>
+						<td class="drink spirits spirtoase">Spirits</td>
+					</tr>
+					<tr>
+						<td class="drink beer bere"><a href="javascript:;"><img id="beer" src="img/icon.beer.png"></a></td>
+						<td class="drink wine vin"><a href="javascript:;"><img id="wine" src="img/icon.wine.png"></a></td>
+						<td class="drink spirits spirtoase"><a href="javascript:;"><img id="spirits" src="img/icon.spirits.png"></a></td>
+					</tr>
+					<tr>
+						<td class="drink beer bere inputs"><input data-prevent-focus-zoom="true" type="text" pattern="[0-9]*" value="5" maxlength="2" class="alcohol">%</td>
+						<td class="drink wine vin inputs"><input data-prevent-focus-zoom="true" type="text" pattern="[0-9]*" value="12" maxlength="2" class="alcohol">%</td>
+						<td class="drink spirits spirtoase inputs"><input data-prevent-focus-zoom="true" type="text" pattern="[0-9]*" value="40" maxlength="2" class="alcohol">%</td>
+					</tr>
+					<tr class="alcvol">
+						<td class="drink beer bere">Alc. Vol.</td>
+						<td class="drink wine vin">Alc. Vol.</td>
+						<td class="drink spirits spirtoase">Alc. Vol.</td>
+					</tr>
+					</table>
+				</div>
+
+				<div class="topbg second">
+					<table width="100%">
+					<tr>
+						<td>
+							<div class="input" style="margin-top: 10px;">
+								<table width="100%">
+								<tr>
+									<td class="label">Quantity</td>
+									<td class="text"><input data-prevent-focus-zoom="true" type="text" pattern="[0-9]*" id="cantitate" value="" placeholder="0" maxlength="4"></td>
+									<td class="unit">ml</td>
+								</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="quickadd">
+							<table>
+							<tr>
+								<td><a href="javascript:;" id="iconsmall"><img id="icon" src="img/icon.beer.small.png" /></a></td>
+								<td><a href="javascript:;" class="quickadd">1x</a></td>
+								<td><a href="javascript:;" class="quickadd">2x</a></td>
+								<td><a href="javascript:;" class="quickadd">3x</a></td>
+								<td><a href="javascript:;" class="quickadd">4x</a></td>
+							</tr>
+							<tr>
+								<td class="unit"><span class="unitate">500</span>ml<div><span class="alcvol"></span>% Alc. Vol.</div></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+					</table>
+				</div>
+
+				<a href="javascript:;" id="next_step" class="redbutton">Add the drink</a>
+			</div>
+
+			<div class="step step5">
+				<div class="list">
+					<a href="javascript:;" id="add_another_drink" class="addbutton"><img src="img/add.png" align="middle" /> <span>Add another drink</span></a>
+					<a href="javascript:;" class="addbutton drinks scrollable">
+						<table width="640">
+						<tr>
+							<td class="icon"></td>
+							<td class="qty"></td>
+						</tr>
+						</table>
+					</a>
+				</div>
+
+				<a href="javascript:;" id="drinking_timeframe" class="redbutton">Set your time</a>
+			</div>
+
+			<div class="step step6">
+
+				<div class="body">
+					<img src="img/timeframe.png" id="timeframe">
+
+					<div class="input">
+						<table width="100%">
+						<tr>
+							<td class="label">I started at</td>
+							<td class="text"><input data-prevent-focus-zoom="true" type="text" pattern="[0-9]*" id="start_hour" maxlength="2" value="19" placeholder="00">:<input data-prevent-focus-zoom="true" type="text" pattern="[0-9]*" id="start_minutes" class="minutes" maxlength="2" value="00" placeholder="00"></td>
+							<td class="unit"></td>
+						</tr>
+						</table>
+					</div>
+
+					<div class="input">
+						<table>
+						<tr>
+							<td class="label">I finished at</td>
+							<td class="text"><input data-prevent-focus-zoom="true" maxlength="2" type="text" pattern="[0-9]*" id="end_hour" value="21" placeholder="00">:<input data-prevent-focus-zoom="true" type="text" pattern="[0-9]*" id="end_minutes" class="minutes" maxlength="2" value="00" placeholder="00"></td>
+							<td class="unit"></td>
+						</tr>
+						</table>
+					</div>
+
+					<div class="discreg">Valid in case of constant alcohol consumption only.</div>
+				</div>
+				<a href="javascript:;" id="calculate_time" class="redbutton">Calculate time</a>
+			</div>
+
+			<div class="step step7">
+				<div class="body">
+					<div class="toptext">
+						<span>You started drinking at</span> <span class="starttime"></span> <span>and finished at</span> <span class="endtime"></span>.
+					</div>
+					<div class="text">
+						<h1>Your blood alcohol <br>level will reach zero at:</h1>
+						<h2>-</h2>
+						<h3 style="font-size: 22px;">Add 90 minutes to the end result if you've consumed <br>any food.</h3>
+					</div>
+					<div class="knob">
+						<input data-prevent-focus-zoom="true" type="text" id="percent" value="0" class="percent" name="percent">
+					</div>
+				</div>
+
+				<div class="disclaimer">
+					In Romania, the legal blood alcohol limit is ZERO and you are responsible for your actions. You are allowed to get behind the wheel after the above specified time.
+				</div>
+
+				<a href="javascript:;" id="start_again" class="redbutton">Start again</a>
+			</div>
+
+			<div class="step step8">
+				<div class="list" style="overflow: hidden; height: 143px;">
+					<a href="javascript:;" id="history_title" class="addbutton">This is your history</a>
+				</div>
+				<div class="list scrollable" id="history_list">
+					
+				</div>
+				<a href="javascript:;" id="start_a_new_one" class="redbutton">Start again</a>
+			</div>
+
+			<div class="step step9">
+				<div class="text">In Romania, the legal blood alcohol limit is ZERO and you are responsible for your actions.</div>
+
+				<div class="text2">We cannot make accurate estimates based on the information provided.</div>
+
+				<a href="javascript:;" id="start_again" class="redbutton">Start again</a>
+			</div>
+
+			<div id="footer">
+				<table width="100%">
+				<tr>
+					<td>
+						<a href="javascript:;" class="history tab" id="show_history">
+							<img src="img/tabicon.1.0.png">
+							<p>History</p>
+							<img src="img/selected_bg.png" class="selected">
+						</a>
+					</td>
+					<td class="bio">
+						<a href="javascript:;" class="bio tab" id="show_bio">
+							<img src="img/tabicon.2.male.0.png">
+							<p>Bio</p>
+							<img src="img/selected_bg.png" class="selected">
+						</a>
+					</td>
+					<td>
+						<a href="javascript:;" class="drinks tab" id="show_drinks">
+							<img src="img/tabicon.3.0.png">
+							<p>Drinks</p>
+							<img src="img/selected_bg.png" class="selected">
+						</a>
+					</td>
+					<td>
+						<a href="javascript:;" class="results tab" id="show_results">
+							<img src="img/tabicon.4.0.png">
+							<p>Results</p>
+							<img src="img/selected_bg.png" class="selected">
+						</a>
+					</td>
+				</tr>
+				</table>
+			</div>
+		</div>
+		<script src="js/main.js?v=4387312146"></script>
+    </body>
+</html>
